@@ -1,0 +1,6 @@
+@APICursantes_HostAddress = http://localhost:5112
+
+GET {{APICursantes_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
