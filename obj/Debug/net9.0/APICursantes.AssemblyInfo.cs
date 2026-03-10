@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APICursantes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a84bea28b958830b456889490b818b562b6b2158")]
 [assembly: System.Reflection.AssemblyProductAttribute("APICursantes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APICursantes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

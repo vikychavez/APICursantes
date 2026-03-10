@@ -166,3 +166,4 @@ D:\Viky\WPF\APICursantes\APICursantes\obj\Debug\net9.0\refint\APICursantes.dll
 D:\Viky\WPF\APICursantes\APICursantes\obj\Debug\net9.0\APICursantes.pdb
 D:\Viky\WPF\APICursantes\APICursantes\obj\Debug\net9.0\APICursantes.genruntimeconfig.cache
 D:\Viky\WPF\APICursantes\APICursantes\obj\Debug\net9.0\ref\APICursantes.dll
+D:\Viky\WPF\APICursantes\APICursantes\obj\Debug\net9.0\APICursantes.sourcelink.json

@@ -24,12 +24,13 @@ namespace APICursantes.Models
         public string? Celular { get; set; }
         public string? TelefonoOpcional { get; set; }
         public string? Email { get; set; }
-        public string? Ciudad { get; set; }
+        public string Ciudad { get; set; }
 
         public string? ObserSistemaAnterior { get; set; }
 
 
         public string? Foto { get; set; }
+     
 
     }
 }

@@ -41,6 +41,35 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Cursante"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CursanteInsertDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CursanteInsertDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CursanteInsertDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   },
@@ -100,6 +129,71 @@
             "nullable": true
           },
           "obserSistemaAnterior": {
+            "type": "string",
+            "nullable": true
+          },
+          "foto": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CursanteInsertDto": {
+        "required": [
+          "apellido",
+          "dni",
+          "fechaNac",
+          "nombre",
+          "tipoDoc"
+        ],
+        "type": "object",
+        "properties": {
+          "apellido": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "nombre": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "tipoDoc": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dni": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "fechaNac": {
+            "type": "string",
+            "format": "date"
+          },
+          "direccion": {
+            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          },
+          "celular": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefonoOpcional": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "obser": {
             "type": "string",
             "nullable": true
           },

@@ -5,6 +5,10 @@ using APICursantes.Models.DTO;
 using APICursantes.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Net;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace APICursantes.Controllers
 {
@@ -27,6 +31,17 @@ namespace APICursantes.Controllers
 
             return Ok(cursantes);
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> Insertar([FromBody] CursanteInsertDto dto)
+        {
+            int nroCursante = await _repository.CursantesInsertarAsync(dto);
 
+            return Ok(new
+            {
+                NroCursante = nroCursante,
+                mensaje = "Cursante creado correctamente"
+            });
+        }
     }
 }

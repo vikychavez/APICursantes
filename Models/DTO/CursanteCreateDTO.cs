@@ -5,17 +5,17 @@ namespace APICursantes.Models.DTO
 {
     public class CursanteCreateDTO
     {
-        string Apellido { get; set; }
-        string Nombre { get; set; }
-           int TipoDoc { get; set; }
-           string DNI { get; set; }
-           Date FechaNac { get; set; }
-          string Direccion { get; set; }
-           string Celular { get; set; }
-           string TelefonoOpcional { get; set; }
-           string EMail { get; set; }
-           int Ciudad { get; set; }
-		   string Obser { get; set; }
-		   string Foto { get; set; }
+        public string Apellido { get; set; }
+        public string Nombre { get; set; }
+        public    short TipoDoc { get; set; }
+        public    string DNI { get; set; }
+        public DateOnly FechaNac { get; set; }
+        public   string Direccion { get; set; }
+        public    string Celular { get; set; }
+        public    string TelefonoOpcional { get; set; }
+        public    string EMail { get; set; }
+        public    int Ciudad { get; set; }
+		public    string Obser { get; set; }
+		public    string Foto { get; set; }
     }
 }

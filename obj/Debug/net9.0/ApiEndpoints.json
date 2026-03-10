@@ -18,5 +18,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "APICursantes.Controllers.CursanteController",
+    "Method": "Insertar",
+    "RelativePath": "api/Cursante",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CursanteInsertDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
