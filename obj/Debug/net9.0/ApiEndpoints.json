@@ -1,23 +1,29 @@
 [
   {
     "ContainingType": "APICursantes.Controllers.CursanteController",
-    "Method": "GetCursantes",
+    "Method": "CursantesSeleccionar",
     "RelativePath": "api/Cursante",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[APICursantes.Models.Cursante, APICursantes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "nrocursante",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "nrodoc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "nombre",
+        "Type": "System.String",
+        "IsRequired": false
       }
-    ]
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "APICursantes.Controllers.CursanteController",
@@ -30,6 +36,22 @@
       {
         "Name": "dto",
         "Type": "CursanteInsertDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APICursantes.Controllers.CursanteController",
+    "Method": "CursantesDeUnCurso",
+    "RelativePath": "api/Cursante/nrocursao/{nrocurso}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nrocurso",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

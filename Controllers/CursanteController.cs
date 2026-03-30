@@ -24,14 +24,21 @@ namespace APICursantes.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<Cursante>>> GetCursantes()
-        {
-            var cursantes = await _repository.ObtenerCursantesAsync();
+        //[HttpGet]
+        //public async Task<ActionResult<List<Cursante>>> GetCursantes()
+        //{
+        //    var cursantes = await _repository.ObtenerCursantesAsync();
 
-            return Ok(cursantes);
-        }
+        //    return Ok(cursantes);
+        //}
         
+        [HttpGet]
+        public async Task<IActionResult> CursantesSeleccionar(int? nrocursante, string? nrodoc, string? nombre)
+        {
+            var data = await _repository.CursantesSeleccionar(nrocursante, nrodoc, nombre);
+            return Ok(data);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Insertar([FromBody] CursanteInsertDto dto)
         {
@@ -42,6 +49,12 @@ namespace APICursantes.Controllers
                 NroCursante = nroCursante,
                 mensaje = "Cursante creado correctamente"
             });
+        }
+        [HttpGet("nrocursao/{nrocurso}")]
+        public async Task<IActionResult> CursantesDeUnCurso(int nrocurso)
+        {
+            var data = await _repository.CursantesDeUnCurso(nrocurso);
+            return Ok(data);
         }
     }
 }

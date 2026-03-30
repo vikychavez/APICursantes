@@ -10,35 +10,33 @@
         "tags": [
           "Cursante"
         ],
+        "parameters": [
+          {
+            "name": "nrocursante",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "nrodoc",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nombre",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Cursante"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Cursante"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Cursante"
-                  }
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
@@ -71,74 +69,33 @@
           }
         }
       }
+    },
+    "/api/Cursante/nrocursao/{nrocurso}": {
+      "get": {
+        "tags": [
+          "Cursante"
+        ],
+        "parameters": [
+          {
+            "name": "nrocurso",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
-      "Cursante": {
-        "type": "object",
-        "properties": {
-          "nroCursante": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "apellido": {
-            "type": "string",
-            "nullable": true
-          },
-          "nombre": {
-            "type": "string",
-            "nullable": true
-          },
-          "cursante": {
-            "type": "string",
-            "nullable": true
-          },
-          "tipoDoc": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "dni": {
-            "type": "string",
-            "nullable": true
-          },
-          "fechaNac": {
-            "type": "string",
-            "format": "date",
-            "nullable": true
-          },
-          "direccion": {
-            "type": "string",
-            "nullable": true
-          },
-          "celular": {
-            "type": "string",
-            "nullable": true
-          },
-          "telefonoOpcional": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "ciudad": {
-            "type": "string",
-            "nullable": true
-          },
-          "obserSistemaAnterior": {
-            "type": "string",
-            "nullable": true
-          },
-          "foto": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CursanteInsertDto": {
         "required": [
           "apellido",

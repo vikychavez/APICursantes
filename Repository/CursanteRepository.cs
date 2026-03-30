@@ -62,5 +62,25 @@ namespace APICursantes.Repository
 
             return (int)nroCursante.Value;
         }
+        public async Task<List<Cursante>> CursantesDeUnCurso(int nrocuro)
+        {
+            return await _context.Cursantes
+                .FromSqlRaw("EXEC CursantesDeUnCurso @NroCurso",
+                    new SqlParameter("@NroCurso", (object?)nrocuro)
+                   
+                )
+                .ToListAsync();
+        }
+        public async Task<List<Cursante>> CursantesSeleccionar(int? nrocursante, string? nrodoc, string? nombre)
+        {
+            return await _context.Cursantes
+                .FromSqlRaw("EXEC CursantesSeleccionar @NroCursante,@NroDoc,@Nombre",
+                    new SqlParameter("@NroCursante", (object?)nrocursante ?? DBNull.Value),
+                    new SqlParameter("@NroDoc", (object?)nrodoc ?? DBNull.Value),
+                    new SqlParameter("@Nombre", (object?)nombre ?? DBNull.Value)
+
+                )
+                .ToListAsync();
+        }
     }
 }
