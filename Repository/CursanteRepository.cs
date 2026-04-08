@@ -1,4 +1,5 @@
 ﻿using APICursantes.Models;
+using APICursantes.Models.DTO;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -82,5 +83,30 @@ namespace APICursantes.Repository
                 )
                 .ToListAsync();
         }
+        public async Task<int> CursantesActualizar(int NroCursante,CursanteDTO cursante)
+        {
+            var filasAfectadas =await _context.Database
+                 .ExecuteSqlRawAsync("EXEC CursantesActualizar @NroCursante,@Apellido,@Nombre,@TipoDoc,@DNI," +
+                 "@FechaNac,@Direccion,@Celular,@TelefonoOpcional, @EMail, @Ciudad, @Obser, @Foto",
+                     new SqlParameter("@NroCursante", cursante.NroCursante),
+                     new SqlParameter("@Apellido", cursante.Apellido),
+                     new SqlParameter("@Nombre", cursante.Nombre),
+                     new SqlParameter("@TipoDoc", int.Parse(cursante.TipoDoc)),
+                     new SqlParameter("@DNI", cursante.DNI),
+                     new SqlParameter("@FechaNac", cursante.FechaNac),
+                     new SqlParameter("@Direccion", cursante.Direccion),
+                     new SqlParameter("@Celular", cursante.Celular),
+                     new SqlParameter("@TelefonoOpcional", cursante.TelefonoOpcional),
+                     new SqlParameter("@EMail", cursante.Email),
+                     new SqlParameter("@Ciudad", int.Parse(cursante.Ciudad)),
+                     new SqlParameter("@Obser", cursante.ObserSistemaAnterior),
+                     new SqlParameter("@Foto", cursante.Foto)
+
+                 );
+
+            return filasAfectadas;
+                      
+        }
     }
 }
+

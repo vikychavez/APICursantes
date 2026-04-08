@@ -56,5 +56,11 @@ namespace APICursantes.Controllers
             var data = await _repository.CursantesDeUnCurso(nrocurso);
             return Ok(data);
         }
+        [HttpPut("{nrocursante}")]
+        public async Task<IActionResult> CursantesActualizar(int nrocursante, CursanteDTO  cursante)
+        {
+            var actualizado = await _repository.CursantesActualizar(nrocursante,cursante);
+            return NoContent();
+        }
     }
 }

@@ -43,6 +43,27 @@
   },
   {
     "ContainingType": "APICursantes.Controllers.CursanteController",
+    "Method": "CursantesActualizar",
+    "RelativePath": "api/Cursante/{nrocursante}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nrocursante",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cursante",
+        "Type": "APICursantes.Models.DTO.CursanteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APICursantes.Controllers.CursanteController",
     "Method": "CursantesDeUnCurso",
     "RelativePath": "api/Cursante/nrocursao/{nrocurso}",
     "HttpMethod": "GET",
