@@ -1,25 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace APICursantes.Models
+namespace APICursantes.Models.DTO
 {
-    public class Cursante
+    public class PacienteDTO
     {
-		[Key]
-        public int NroCursante { get; set; }
+        public int? NroPaciente { get; set; }
         public string? Apellido { get; set; }
 
         public string? Nombre { get; set; }
 
-       
-
-        public Int16? TipoDoc { get; set; }
+        public string? TipoDoc { get; set; }
 
         public string? DNI { get; set; }
 
-
-              public DateOnly? FechaNac { get; set; }
-
-
+        public DateOnly? FechaNac { get; set; }
         public string? Direccion { get; set; }
         public string? Celular { get; set; }
         public string? TelefonoOpcional { get; set; }
@@ -28,9 +23,7 @@ namespace APICursantes.Models
 
         public string? ObserSistemaAnterior { get; set; }
 
-
+        
         public string? Foto { get; set; }
-     
-
     }
 }

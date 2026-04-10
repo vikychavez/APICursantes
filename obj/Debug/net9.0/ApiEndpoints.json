@@ -64,6 +64,48 @@
   },
   {
     "ContainingType": "APICursantes.Controllers.CursanteController",
+    "Method": "CursantesActualizar",
+    "RelativePath": "api/Cursante/{nropaciente}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nropaciente",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "paciente",
+        "Type": "APICursantes.Models.DTO.PacienteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APICursantes.Controllers.CursanteController",
+    "Method": "TratamientosAsignadosEliminar",
+    "RelativePath": "api/Cursante/{nropaciente}/{idtratamiento}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nropaciente",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idtratamiento",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APICursantes.Controllers.CursanteController",
     "Method": "CursantesDeUnCurso",
     "RelativePath": "api/Cursante/nrocursao/{nrocurso}",
     "HttpMethod": "GET",

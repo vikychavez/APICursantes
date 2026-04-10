@@ -19,9 +19,13 @@ namespace APICursantes.Controllers
         private readonly CursanteContext _context;
         private readonly CursanteRepository _repository;
 
-        public CursanteController(CursanteRepository repository)
+        private readonly PacienteContext _paciente_context;
+        private readonly PacienteRepository _paciente_repository;
+
+        public CursanteController(CursanteRepository repository,PacienteRepository pacienteRepository )
         {
             _repository = repository;
+            _paciente_repository = pacienteRepository;
         }
 
         //[HttpGet]
@@ -62,5 +66,33 @@ namespace APICursantes.Controllers
             var actualizado = await _repository.CursantesActualizar(nrocursante,cursante);
             return NoContent();
         }
+
+        [HttpPatch("{nropaciente}")]
+        public async Task<IActionResult> CursantesActualizar(int nropaciente, PacienteDTO paciente)
+        {
+            var actualizado = await _paciente_repository.ActualizarParcial(nropaciente, paciente);
+            return NoContent();
+        }
+        [HttpPatch("{nropaciente}/{idtratamiento}")]
+        public async Task<IActionResult>TratamientosAsignadosEliminar([FromRoute] int nropaciente,
+
+            [FromRoute] int idtratamiento)
+        {
+           
+            try
+            {
+                await _paciente_repository.TratamientosAsignadosEliminar(nropaciente,idtratamiento);
+ 
+                 return NoContent() ;
+
+                
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error: {ex.Message}");
+            }
+        }
+
+
     }
 }
